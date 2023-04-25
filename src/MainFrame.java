@@ -24,9 +24,7 @@ public class MainFrame extends JFrame {
 //        getContentPane().setLayout(new GridLayout());
         setResizable(false);
         setTitle("");
-        this.fc = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV Document", "csv");
-        this.fc.setFileFilter(filter);
+
         this.textArea = new JTextArea();
         this.textArea.setFont(new Font("Times New Roman", Font.PLAIN, 16));
         this.textArea.setBackground(Color.lightGray);
@@ -54,6 +52,9 @@ public class MainFrame extends JFrame {
     }
 
     public File pickFile() {
+        this.fc = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV Document", "csv");
+        this.fc.setFileFilter(filter);
         this.fc.setCurrentDirectory(new File(""));
         this.fc.setDialogTitle("Csv file chooser");
         this.fc.setFileSelectionMode(2);
