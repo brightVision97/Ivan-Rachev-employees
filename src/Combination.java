@@ -1,17 +1,16 @@
-import java.util.Map;
-
 public class Combination {
-
-    public Combination(Long employeeId1, Long employeeId2) {
-        setEmployeeId1(employeeId1);
-        setEmployeeId2(employeeId2);
-    }
 
     private Long employeeId1;
 
     private Long employeeId2;
 
     private int days;
+
+    public Combination(Long employeeId1, Long employeeId2) {
+        setEmployeeId1(employeeId1);
+        setEmployeeId2(employeeId2);
+        setDays(0);
+    }
 
     public Long getEmployeeId1() {
         return employeeId1;
@@ -31,6 +30,10 @@ public class Combination {
 
     public int getDays() {
         return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
     }
 
     public void addDays(int days) {

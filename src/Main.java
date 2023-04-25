@@ -58,13 +58,6 @@ public class Main {
 
     private static LocalDate convertStringToLocalDate(final String date) {
         String[] possibleDateFormats = {
-                "yyyy-MM-dd'T'HH:mm:ssZ",
-                "yyyy-MM-dd'T'HH:mm:ss.SSSzzzz",
-                "yyyy-MM-dd'T'HH:mm:sszzzz",
-                "yyyy-MM-dd'T'HH:mm:ss z",
-                "yyyy-MM-dd'T'HH:mm:ssz",
-                "yyyy-MM-dd'T'HH:mm:ss",
-                "yyyy-MM-dd'T'HHmmss.SSSz",
                 "yyyy-MM-dd",
                 "yyyyMMdd",
                 "dd/MM/yy",

@@ -2,13 +2,6 @@ import java.time.LocalDate;
 
 class EmployeeInProject {
 
-    public EmployeeInProject(Long employeeId, Long projectId, LocalDate startDate, LocalDate endDate) {
-        setEmployeeId(employeeId);
-        setProjectId(projectId);
-        setStartDate(startDate);
-        setEndDate(endDate);
-    }
-
     private Long employeeId;
 
     private Long projectId;
@@ -16,6 +9,14 @@ class EmployeeInProject {
     private LocalDate startDate;
 
     private LocalDate endDate;
+
+    public EmployeeInProject(Long employeeId, Long projectId, LocalDate startDate, LocalDate endDate) {
+        setEmployeeId(employeeId);
+        setProjectId(projectId);
+        setStartDate(startDate);
+        setEndDate(endDate);
+    }
+
 
     public Long getEmployeeId() {
         return employeeId;
