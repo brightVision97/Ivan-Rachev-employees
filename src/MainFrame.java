@@ -2,6 +2,7 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
+import java.util.List;
 
 public class MainFrame extends JFrame {
     private JTextArea textArea;
@@ -23,10 +24,9 @@ public class MainFrame extends JFrame {
 //        getContentPane().setLayout(new GridLayout());
         setResizable(false);
         setTitle("");
-        this.fc  = new JFileChooser();
+        this.fc = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV Document", "csv");
         this.fc.setFileFilter(filter);
-        this.panel = new JPanel(new GridLayout());
         this.textArea = new JTextArea();
         this.textArea.setFont(new Font("Times New Roman", Font.PLAIN, 16));
         this.textArea.setBackground(Color.lightGray);
@@ -34,14 +34,23 @@ public class MainFrame extends JFrame {
         this.textArea.setVisible(true);
         this.textArea.setBounds(0, 0, 590, 505);
         this.sc = new JScrollPane(this.textArea);
-        this.sc.add(this.panel);
         this.sc.setPreferredSize(new Dimension(520, 490));
         this.sc.setHorizontalScrollBarPolicy(31);
         this.sc.setVerticalScrollBarPolicy(21);
         this.sc.setVisible(true);
-        add(this.panel);
         add(this.sc);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }
+
+    public void populateGrid(List<Combination> combinations) {
+        this.panel = new JPanel(new GridLayout(combinations.size(), 3));
+        combinations.forEach(combination -> {
+            this.panel.add(new JTextArea(String.valueOf(combination.getEmployeeId1())));
+            this.panel.add(new JTextArea(String.valueOf(combination.getEmployeeId2())));
+            this.panel.add(new JTextArea(String.valueOf(combination.getDays())));
+        });
+        this.add(this.panel);
+        this.setVisible(true);
     }
 
     public File pickFile() {
